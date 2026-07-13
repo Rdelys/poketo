@@ -1,0 +1,328 @@
+:root{
+  --navy:#103878;
+  --green:#106850;
+  --green-light:#2E8C58;
+  --red:#C1273D;
+  --cream:#F7F5EF;
+  --ink:#152016;
+  --ink-soft:#4B564D;
+  --line:#E1DED3;
+  --radius:14px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:var(--green);}
+
+.wrap{
+  max-width:920px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* Header */
+header{
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+header .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.5rem;
+  font-weight:700;
+  text-decoration:none;
+}
+.logo .pok{color:var(--navy);}
+.logo .eto{color:var(--green);}
+
+nav a{
+  color:var(--ink-soft);
+  text-decoration:none;
+  font-size:0.95rem;
+  margin-left:22px;
+}
+nav a:hover{color:var(--navy);}
+
+/* Hero */
+.hero{
+  padding:72px 0 56px;
+}
+.hero .eyebrow{
+  display:inline-block;
+  font-size:0.8rem;
+  font-weight:600;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--green-light);
+  background:rgba(46,140,88,0.1);
+  padding:5px 12px;
+  border-radius:999px;
+  margin-bottom:20px;
+}
+.hero h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(2.1rem,5vw,3.2rem);
+  line-height:1.08;
+  letter-spacing:-0.02em;
+  margin:0 0 20px;
+  max-width:11ch;
+}
+.hero h1 .accent{color:var(--green);}
+.hero p.lead{
+  font-size:1.15rem;
+  color:var(--ink-soft);
+  max-width:46ch;
+  margin:0 0 32px;
+}
+.cta-row{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:13px 22px;
+  border-radius:10px;
+  font-weight:600;
+  font-size:0.98rem;
+  text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary{
+  background:var(--navy);
+  color:#fff;
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(16,56,120,0.25);}
+.btn-ghost{
+  background:transparent;
+  color:var(--ink);
+  border:1px solid var(--line);
+}
+.btn-ghost:hover{border-color:var(--navy);color:var(--navy);}
+
+/* Balance illustration */
+.balance{
+  margin-top:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+}
+.balance-side{
+  flex:1;
+  max-width:220px;
+  text-align:center;
+  padding:22px 16px;
+  border-radius:var(--radius);
+}
+.balance-side.lend{background:rgba(16,104,80,0.08);}
+.balance-side.owe{background:rgba(193,39,61,0.07);}
+.balance-side .amount{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.8rem;
+  font-weight:700;
+}
+.balance-side.lend .amount{color:var(--green);}
+.balance-side.owe .amount{color:var(--red);}
+.balance-side .label{
+  font-size:0.85rem;
+  color:var(--ink-soft);
+  margin-top:4px;
+}
+.balance-mid{
+  width:44px;
+  height:2px;
+  background:var(--line);
+  position:relative;
+  flex-shrink:0;
+}
+.balance-mid::before,.balance-mid::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--ink-soft);
+  transform:translateY(-50%);
+}
+.balance-mid::before{left:0;}
+.balance-mid::after{right:0;}
+
+/* Features */
+.section{
+  padding:52px 0;
+  border-top:1px solid var(--line);
+}
+.section h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.7rem;
+  letter-spacing:-0.01em;
+  margin:0 0 8px;
+}
+.section .section-lead{
+  color:var(--ink-soft);
+  max-width:52ch;
+  margin:0 0 36px;
+}
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+}
+.card .icon{
+  width:38px;height:38px;
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:14px;
+  font-size:1.1rem;
+}
+.card h3{
+  font-size:1.05rem;
+  margin:0 0 8px;
+  font-family:'Space Grotesk',sans-serif;
+}
+.card p{
+  font-size:0.92rem;
+  color:var(--ink-soft);
+  margin:0;
+}
+
+/* Languages / currencies strip */
+.strip{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.pill{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:999px;
+  padding:8px 16px;
+  font-size:0.88rem;
+  color:var(--ink-soft);
+}
+
+/* Download CTA */
+.cta-block{
+  background:var(--navy);
+  border-radius:20px;
+  padding:44px 36px;
+  color:#fff;
+  text-align:center;
+}
+.cta-block h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.6rem;
+  margin:0 0 10px;
+  color:#fff;
+}
+.cta-block p{
+  color:rgba(255,255,255,0.75);
+  margin:0 0 26px;
+}
+.cta-block .btn-primary{
+  background:var(--green);
+}
+.cta-block .btn-primary:hover{box-shadow:0 6px 16px rgba(46,140,88,0.35);}
+
+/* Footer */
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 0 40px;
+}
+footer .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+footer .foot-links a{
+  color:var(--ink-soft);
+  text-decoration:none;
+  font-size:0.88rem;
+  margin-left:18px;
+}
+footer .foot-links a:hover{color:var(--navy);}
+footer .copyright{
+  font-size:0.85rem;
+  color:var(--ink-soft);
+}
+
+/* Legal pages */
+.legal main{
+  padding:48px 0 64px;
+}
+.legal h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:2rem;
+  letter-spacing:-0.01em;
+  margin:0 0 6px;
+}
+.legal .updated{
+  color:var(--ink-soft);
+  font-size:0.9rem;
+  margin:0 0 40px;
+}
+.legal h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.2rem;
+  margin:38px 0 12px;
+  color:var(--navy);
+}
+.legal p, .legal li{
+  color:var(--ink-soft);
+  font-size:0.98rem;
+}
+.legal ul{padding-left:20px;}
+.legal strong{color:var(--ink);}
+
+@media (max-width:720px){
+  .grid3{grid-template-columns:1fr;}
+  .balance{flex-direction:column;gap:16px;}
+  .balance-mid{width:2px;height:30px;}
+  .balance-mid::before,.balance-mid::after{left:50%;transform:translateX(-50%);}
+  .balance-mid::before{top:0;}
+  .balance-mid::after{top:auto;bottom:0;}
+  nav a{margin-left:14px;font-size:0.88rem;}
+  .cta-block{padding:34px 22px;}
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.5rem;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:-0.01em;
+}
+.logo img{
+  height:32px;
+  width:auto;
+  display:block;
+}
